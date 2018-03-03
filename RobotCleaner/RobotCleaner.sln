@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotCleaner", "RobotCleaner\RobotCleaner.csproj", "{1FCA3D53-F69C-46F4-8CB9-00371B524C1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotCleaner.Tests", "RobotCleaner.Tests\RobotCleaner.Tests.csproj", "{FE439E77-8FDB-4B9F-8C66-BB75281CCDDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1FCA3D53-F69C-46F4-8CB9-00371B524C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FCA3D53-F69C-46F4-8CB9-00371B524C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FCA3D53-F69C-46F4-8CB9-00371B524C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE439E77-8FDB-4B9F-8C66-BB75281CCDDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE439E77-8FDB-4B9F-8C66-BB75281CCDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE439E77-8FDB-4B9F-8C66-BB75281CCDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE439E77-8FDB-4B9F-8C66-BB75281CCDDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
