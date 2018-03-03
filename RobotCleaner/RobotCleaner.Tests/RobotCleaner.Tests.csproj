@@ -43,11 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommmandTest.cs" />
+    <Compile Include="PointTests.cs" />
     <Compile Include="RobotCleanerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RobotCleaner\RobotCleaner.csproj">
+      <Project>{1FCA3D53-F69C-46F4-8CB9-00371B524C1D}</Project>
+      <Name>RobotCleaner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
