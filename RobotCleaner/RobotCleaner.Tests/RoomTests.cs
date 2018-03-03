@@ -13,7 +13,7 @@ namespace RobotCleaner.Tests {
         [Test]
         public void AddPath_TwoUniquePointsAdded_CleanReturnsTwo() {
             // Act
-            room.AddPath(new List<Point> { new Point(1, 1), new Point(1, 2), });
+            room.AddPath(new List<Point> { new Point(1, 1), new Point(1, 2) });
 
             // Assert
             int actual = room.CleanedSquares();
@@ -28,6 +28,16 @@ namespace RobotCleaner.Tests {
             // Assert
             int actual = room.CleanedSquares();
             Assert.That(actual, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void AddPath_TwoUniqueTwoSame_ReturnTwoCleaned() {
+            // Act
+            room.AddPath(new List<Point> { new Point(1, 1), new Point(1, 1), new Point(1, 2) });
+
+            // Assert
+            int actual = room.CleanedSquares();
+            Assert.That(actual, Is.EqualTo(2));
         }
     }
 }
