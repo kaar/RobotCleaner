@@ -14,8 +14,7 @@ namespace RobotCleaner.Tests.Commands {
             Point endPoint = south.Execute(startPoint);
 
             // Assert
-            Assert.That(endPoint.X, Is.EqualTo(0));
-            Assert.That(endPoint.Y, Is.EqualTo(-2));
+            Assert.That(endPoint, Is.EqualTo(new Point(0, -2)));
         }
     }
 }

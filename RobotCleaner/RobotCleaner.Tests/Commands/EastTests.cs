@@ -15,8 +15,7 @@ namespace RobotCleaner.Tests.Commands {
             Point endpoint = command.Execute(startPoint);
 
             // Assert
-            Assert.That(endpoint.X, Is.EqualTo(2));
-            Assert.That(endpoint.Y, Is.EqualTo(0));
+            Assert.That(endpoint, Is.EqualTo(new Point(2, 0)));
         }
     }
 }

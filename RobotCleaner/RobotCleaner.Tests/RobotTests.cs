@@ -61,9 +61,13 @@ namespace RobotCleaner.Tests {
             // Act
             ICommand command = new East(2);
             r.ExecuteCommand(new East(2));
+            Assert.That(r.CurrentPos, Is.EqualTo(new Point(2, 0)));
             r.ExecuteCommand(new South(1));
+            Assert.That(r.CurrentPos, Is.EqualTo(new Point(2, -1)));
             r.ExecuteCommand(new West(1));
+            Assert.That(r.CurrentPos, Is.EqualTo(new Point(1, -1)));
             r.ExecuteCommand(new North(1));
+            Assert.That(r.CurrentPos, Is.EqualTo(new Point(1, 0)));
             r.ExecuteCommand(new West(1));
 
             // Assert
