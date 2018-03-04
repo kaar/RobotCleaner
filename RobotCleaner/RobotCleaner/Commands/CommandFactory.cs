@@ -1,8 +1,8 @@
 using System;
 
 namespace RobotCleaner.Commands {
-    public class CommandBuilder {
-        public ICommand Create(string direction, int steps) {
+    public class CommandFactory {
+        public static ICommand Create(string direction, int steps) {
             switch (direction) {
                 case "E":
                     return new East(steps);

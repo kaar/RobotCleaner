@@ -4,20 +4,13 @@ using RobotCleaner.Commands;
 
 namespace RobotCleaner.Tests.Commands {
     [TestFixture]
-    public class CommandBuilderTests {
-        private CommandBuilder commandBuilder;
-
-        [SetUp]
-        public void SetUp() {
-            commandBuilder = new CommandBuilder();
-        }
-
+    public class CommandFactoryTests {
         [Test]
         public void Create_DirectionEast_BuildEastCommand() {
             // Arrange
 
             // Act
-            ICommand actual = commandBuilder.Create("E", 10);
+            ICommand actual = CommandFactory.Create("E", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(East)));
@@ -28,7 +21,7 @@ namespace RobotCleaner.Tests.Commands {
             // Arrange
 
             // Act
-            ICommand actual = commandBuilder.Create("W", 10);
+            ICommand actual = CommandFactory.Create("W", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(West)));
@@ -39,7 +32,7 @@ namespace RobotCleaner.Tests.Commands {
             // Arrange
 
             // Act
-            ICommand actual = commandBuilder.Create("S", 10);
+            ICommand actual = CommandFactory.Create("S", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(South)));
@@ -50,7 +43,7 @@ namespace RobotCleaner.Tests.Commands {
             // Arrange
 
             // Act
-            ICommand actual = commandBuilder.Create("N", 10);
+            ICommand actual = CommandFactory.Create("N", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(North)));
@@ -59,7 +52,7 @@ namespace RobotCleaner.Tests.Commands {
         [Test]
         public void Create_UnknownDirection_ThrowsException() {
             // Act & Assert
-            Assert.Throws<Exception>(() => commandBuilder.Create("X", 10));
+            Assert.Throws<Exception>(() => CommandFactory.Create("X", 10));
         }
     }
 }

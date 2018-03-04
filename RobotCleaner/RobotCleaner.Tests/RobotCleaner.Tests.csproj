@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandBuilderTests.cs" />
+    <Compile Include="Commands\CommandFactoryTests.cs" />
     <Compile Include="Commands\EastTests.cs" />
     <Compile Include="Commands\NorthTests.cs" />
     <Compile Include="PathTests.cs" />

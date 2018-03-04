@@ -36,7 +36,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandBuilder.cs" />
+    <Compile Include="Commands\CommandFactory.cs" />
     <Compile Include="Commands\East.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\North.cs" />
