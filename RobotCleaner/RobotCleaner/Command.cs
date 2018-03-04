@@ -44,7 +44,7 @@ namespace RobotCleaner {
         public int Steps { get; }
 
         public Point Execute(Point start) {
-            throw new System.NotImplementedException();
+            return new Point(start.X - Steps, start.Y);
         }
     }
 
@@ -56,7 +56,7 @@ namespace RobotCleaner {
         public int Steps { get; }
 
         public Point Execute(Point start) {
-            throw new System.NotImplementedException();
+            return new Point(start.X, start.Y - Steps);
         }
     }
 
