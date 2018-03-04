@@ -24,13 +24,25 @@ namespace RobotCleaner.Tests {
         }
 
         [Test]
-        public void EqualTo_DifferentXValues_TwoPointsNotEqual() {
+        public void EqualTo_DifferentXValues_NotEqual() {
             // Arrange
             Point p1 = new Point(0, 0);
             Point p2 = new Point(1, 0);
 
             // Act & Assert
             Assert.That(p1, Is.Not.EqualTo(p2));
+        }
+
+        [Test]
+        public void EqualTo_WhenOneIsNull_NotEqual() {
+            // Arrange
+            Point p2 = new Point(0, 0);
+
+            // Act
+            bool actual = p2.Equals(null);
+
+            // Assert
+            Assert.That(actual, Is.False);
         }
 
         [Test]

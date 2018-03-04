@@ -15,8 +15,8 @@
                 return false;
             }
 
-            Point p = (Point)obj;
-            return (X == p.X) && (Y == p.Y);
+            Point otherPoint = (Point)obj;
+            return X == otherPoint.X && Y == otherPoint.Y;
         }
 
         public override int GetHashCode() {
