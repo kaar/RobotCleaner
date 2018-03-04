@@ -15,6 +15,14 @@
                 return new West(steps);
             }
 
+            if (direction == "N") {
+                return new North(steps);
+            }
+
+            if (direction == "S") {
+                return new South(steps);
+            }
+
             return null;
         }
     }
@@ -45,6 +53,18 @@
 
     public class South : ICommand {
         public South(int steps) {
+            Steps = steps;
+        }
+
+        public int Steps { get; }
+
+        public Point Execute(Point start) {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    public class North : ICommand {
+        public North(int steps) {
             Steps = steps;
         }
 
