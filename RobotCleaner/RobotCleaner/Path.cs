@@ -1,32 +1,34 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RobotCleaner {
     public class Path {
-        private readonly Point start;
-        private readonly Point end;
+        public static IEnumerable<Point> GetPoints(Point start, Point end) {
+            int dx = GetDistance(start.X, end.X);
+            int dy = GetDistance(start.Y, end.Y);
 
-        public Path(Point start, Point end) {
-            this.start = start;
-            this.end = end;
-        }
-
-        public IEnumerable<Point> GetPoints() {
-            var list = new List<Point>();
-            for (int i = start.X; i < end.X; i++) {
-                list.Add(new Point(i, start.Y));
+            // Moving Horisonaly
+            if (dx > 0) {
+                return GetRange(start.X, end.X)
+                    .Select(i => new Point(i, start.Y));
             }
 
-            for (int i = start.Y; i < end.Y; i++) {
-                list.Add(new Point(start.X, i));
+            // Moving Vericaly
+            if (dy > 0) {
+                return GetRange(start.Y, end.Y)
+                    .Select(i => new Point(start.X, i));
             }
 
-            list.Add(end);
-            return list;
+            return null;
         }
 
-        public IEnumerable<int> GetPointRange(int start, int end) {
-            return Enumerable.Range(start, start - end);
+        public static IEnumerable<int> GetRange(int start, int end) {
+            return Enumerable.Range(end < start ? end : start, GetDistance(start, end) + 1);
+        }
+
+        public static int GetDistance(int i1, int i2) {
+            return Math.Abs(i2 - i1);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using NUnit.Framework;
 
 namespace RobotCleaner.Tests {
@@ -13,10 +12,8 @@ namespace RobotCleaner.Tests {
             Point start = new Point(0, 0);
             Point end = new Point(0, 2);
 
-            Path path = new Path(start, end);
-
             // Act
-            List<Point> points = path.GetPoints()
+            List<Point> points = Path.GetPoints(start, end)
                                      .ToList();
 
             // Assert
@@ -29,10 +26,8 @@ namespace RobotCleaner.Tests {
             Point start = new Point(0, 0);
             Point end = new Point(2, 0);
 
-            Path path = new Path(start, end);
-
             // Act
-            List<Point> points = path.GetPoints()
+            List<Point> points = Path.GetPoints(start, end)
                                      .ToList();
 
             // Assert
@@ -45,10 +40,8 @@ namespace RobotCleaner.Tests {
             Point start = new Point(2, 0);
             Point end = new Point(0, 0);
 
-            Path path = new Path(start, end);
-
             // Act
-            List<Point> points = path.GetPoints()
+            List<Point> points = Path.GetPoints(start, end)
                                      .ToList();
 
             // Assert
@@ -61,10 +54,8 @@ namespace RobotCleaner.Tests {
             Point start = new Point(0, 2);
             Point end = new Point(0, 0);
 
-            Path path = new Path(start, end);
-
             // Act
-            List<Point> points = path.GetPoints()
+            List<Point> points = Path.GetPoints(start, end)
                                      .ToList();
 
             // Assert
@@ -82,7 +73,6 @@ namespace RobotCleaner.Tests {
             Assert.That(GetRange(-1, -2), Is.EquivalentTo(new[] { -1, -2 }));
             Assert.That(GetRange(2, 4), Is.EquivalentTo(new[] { 2, 3, 4 }));
             Assert.That(GetRange(-2, -4), Is.EquivalentTo(new[] { -2, -3, -4 }));
-
         }
 
         [Test]
@@ -93,6 +83,18 @@ namespace RobotCleaner.Tests {
             Assert.That(GetDistance(0, 2), Is.EqualTo(2));
             Assert.That(GetDistance(1, 2), Is.EqualTo(1));
             Assert.That(GetDistance(-2, 2), Is.EqualTo(4));
+        }
+
+        [Test]
+        public void Merge() {
+            IEnumerable<int> x = new[] { 1, 2, 3 };
+            IEnumerable<int> y = new[] { 0 };
+
+            // Act
+            var actual = new List<Point>();
+
+            // Assert
+            Assert.That(actual, Is.EquivalentTo(new[] { new Point(1, 0), new Point(2, 0), new Point(3, 0) }));
         }
 
         public IEnumerable<int> GetRange(int start, int end) {
