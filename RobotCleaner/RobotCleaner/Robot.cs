@@ -17,10 +17,6 @@ namespace RobotCleaner {
             currentPos = endpoint;
         }
 
-        public Point CurrentPos() {
-            return currentPos;
-        }
-
         private void InitClean() {
             room.AddPath(currentPos, currentPos);
         }
