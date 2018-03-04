@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using NUnit.Framework;
@@ -73,18 +74,37 @@ namespace RobotCleaner.Tests {
         [Test]
         public void Range() {
             // Act
-            IEnumerable<int> positiveNumbers = GetRange(0, 2);
-            IEnumerable<int> negativeNumbers = Enumerable.Range(-3, 3)
-                                                         .Reverse()
-                                                         .ToList();
 
             // Assert
-            Assert.That(positiveNumbers, Is.EquivalentTo(new[] { 0, 1, 2 }));
-            Assert.That(negativeNumbers, Is.EquivalentTo(new[] { -1, -2, -3 }));
+            Assert.That(GetRange(0, 2), Is.EquivalentTo(new[] { 0, 1, 2 }));
+            Assert.That(GetRange(0, -2), Is.EquivalentTo(new[] { 0, -1, -2 }));
+            Assert.That(GetRange(-2, 2), Is.EquivalentTo(new[] { -2, -1, 0, 1, 2 }));
+            Assert.That(GetRange(-1, -2), Is.EquivalentTo(new[] { -1, -2 }));
+            Assert.That(GetRange(2, 4), Is.EquivalentTo(new[] { 2, 3, 4 }));
+            Assert.That(GetRange(-2, -4), Is.EquivalentTo(new[] { -2, -3, -4 }));
+
+        }
+
+        [Test]
+        public void Distance() {
+            // Act
+
+            // Assert
+            Assert.That(GetDistance(0, 2), Is.EqualTo(2));
+            Assert.That(GetDistance(1, 2), Is.EqualTo(1));
+            Assert.That(GetDistance(-2, 2), Is.EqualTo(4));
         }
 
         public IEnumerable<int> GetRange(int start, int end) {
-            return Enumerable.Range(start, end - start + 1);
+            if (end < start) {
+                return Enumerable.Range(end, GetDistance(start, end) + 1);
+            }
+
+            return Enumerable.Range(start, GetDistance(start, end) + 1);
+        }
+
+        public int GetDistance(int x, int y) {
+            return Math.Abs(y - x);
         }
     }
 }
