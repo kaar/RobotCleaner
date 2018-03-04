@@ -8,6 +8,11 @@ namespace RobotCleaner {
         public Robot(Room room, Point start) {
             this.room = room;
             currentPos = start;
+            InitClean();
+        }
+
+        private void InitClean() {
+            this.room.AddPath(currentPos, currentPos);
         }
 
         public void ExecuteCommand(ICommand command) {

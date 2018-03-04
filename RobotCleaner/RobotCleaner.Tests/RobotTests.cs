@@ -4,6 +4,17 @@ using RobotCleaner.Commands;
 namespace RobotCleaner.Tests {
     public class RobotTests {
         [Test]
+        public void Robot_Started_OneVertexCleaned() {
+            Room room = new Room();
+            var robot = new Robot(room, new Point(0, 0));
+
+            // Act
+
+            // Assert
+            Assert.That(room.CleanedSquares(), Is.EqualTo(1));
+        }
+
+        [Test]
         public void Clean() {
             // Arrange
             Room room = new Room();

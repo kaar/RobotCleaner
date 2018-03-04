@@ -4,10 +4,6 @@ namespace RobotCleaner {
     public class Room {
         private readonly HashSet<Point> cleaned = new HashSet<Point>();
 
-        public void AddPath(IEnumerable<Point> points) {
-            cleaned.UnionWith(points);
-        }
-
         public int CleanedSquares() {
             return cleaned.Count;
         }
@@ -15,6 +11,10 @@ namespace RobotCleaner {
         public void AddPath(Point start, Point end) {
             IEnumerable<Point> visitedPoints = Path.GetPoints(start, end);
             AddPath(visitedPoints);
+        }
+
+        private void AddPath(IEnumerable<Point> points) {
+            cleaned.UnionWith(points);
         }
     }
 }

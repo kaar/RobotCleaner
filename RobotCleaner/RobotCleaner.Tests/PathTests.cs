@@ -73,7 +73,8 @@ namespace RobotCleaner.Tests {
                                      .ToList();
 
             // Assert
-            Assert.That(points, Is.EquivalentTo(new List<Point> { new Point(0, 0) }));
+            Assert.That(points.Count,Is.EqualTo(1));
+            Assert.That(points, Is.EqualTo(new List<Point> { new Point(0, 0) }));
         }
 
         [Test]
