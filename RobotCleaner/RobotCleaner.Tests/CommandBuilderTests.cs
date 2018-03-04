@@ -20,5 +20,27 @@ namespace RobotCleaner.Tests {
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(East)));
         }
+
+        [Test]
+        public void Create_DirectionWest_BuildWest() {
+            // Arrange
+
+            // Act
+            ICommand actual = commandBuilder.Create("W", 10);
+
+            // Assert
+            Assert.That(actual, Is.TypeOf(typeof(West)));
+        }
+
+        [Test]
+        public void Create_DirectionSouth_BuildSouth() {
+            // Arrange
+
+            // Act
+            ICommand actual = commandBuilder.Create("S", 10);
+
+            // Assert
+            Assert.That(actual, Is.TypeOf(typeof(South)));
+        }
     }
 }

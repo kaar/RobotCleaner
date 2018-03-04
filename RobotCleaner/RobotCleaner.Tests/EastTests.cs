@@ -8,15 +8,29 @@ namespace RobotCleaner.Tests {
             // Arrange
             var command = new East(2);
 
-            int x = 0;
-            int y = 0;
+            var startPoint = new Point(0, 0);
 
             // Act
-            Point endpoint = command.Execute(new Point(x, y));
+            Point endpoint = command.Execute(startPoint);
 
             // Assert
             Assert.That(endpoint.X, Is.EqualTo(2));
             Assert.That(endpoint.Y, Is.EqualTo(0));
         }
     }
+
+    [TestFixture]
+    public class WestTests {
+        [Test]
+        public void Execute() {
+            // Arrange
+            var startPoint = new Point(0, 0);
+
+            // Act
+            var west = new West(2);
+
+            // Assert
+        }
+    }
+
 }
