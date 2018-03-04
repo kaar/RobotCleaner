@@ -10,7 +10,18 @@ namespace RobotCleaner {
             this.end = end;
         }
 
-        public IEnumerable<Point> GetPath() {
+        public IEnumerable<Point> GetPoints() {
+            var list = new List<Point>();
+            for (int i = start.X; i < end.X; i++) {
+                list.Add(new Point(i, start.Y));
+            }
+
+            for (int i = start.Y; i < end.Y; i++) {
+                list.Add(new Point(start.X, i));
+            }
+
+            list.Add(end);
+            return list;
         }
     }
 }
