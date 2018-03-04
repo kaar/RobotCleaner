@@ -11,6 +11,7 @@ namespace RobotCleaner.Tests {
             room = new Room();
             robot = new Robot(room);
         }
+
         [Test]
         public void Robot_Started_OneVertexCleaned() {
             // Act
@@ -63,7 +64,6 @@ namespace RobotCleaner.Tests {
             // Arrange
 
             // Act
-            ICommand command = new East(2);
             robot.ExecuteCommand(new East(2));
             robot.ExecuteCommand(new South(1));
             robot.ExecuteCommand(new West(1));

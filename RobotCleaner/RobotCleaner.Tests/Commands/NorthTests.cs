@@ -4,30 +4,30 @@ using RobotCleaner.Commands;
 namespace RobotCleaner.Tests.Commands {
     [TestFixture]
     public class NorthTests {
-        [Test]
-        public void Execute() {
-            // Arrange
-            var startPoint = new Point(0, 0);
-            var north = new North(2);
-
-            // Act
-            Point endPoint = north.Execute(startPoint);
-
-            // Assert
-            Assert.That(endPoint, Is.EqualTo(new Point(0, 2)));
-        }
+        public static Point Origo { get; } = new Point(0, 0);
 
         [Test]
-        public void Execute_UpOne() {
+        public void Execute_OneStepFromOrigo_() {
             // Arrange
-            var startPoint = new Point(1, -1);
             var north = new North(1);
 
             // Act
-            Point endPoint = north.Execute(startPoint);
+            Point endPoint = north.Execute(Origo);
 
             // Assert
-            Assert.That(endPoint, Is.EqualTo(new Point(1, 0)));
+            Assert.That(endPoint, Is.EqualTo(new Point(0, 1)));
+        }
+
+        [Test]
+        public void Execute_MoveTwoSteps() {
+            // Arrange
+            var north = new North(2);
+
+            // Act
+            Point endPoint = north.Execute(Origo);
+
+            // Assert
+            Assert.That(endPoint, Is.EqualTo(new Point(0, 2)));
         }
     }
 }

@@ -76,40 +76,5 @@ namespace RobotCleaner.Tests {
             Assert.That(points.Count,Is.EqualTo(1));
             Assert.That(points, Is.EqualTo(new List<Point> { new Point(0, 0) }));
         }
-
-        [Test]
-        public void Range() {
-            // Act
-
-            // Assert
-            Assert.That(GetRange(0, 2), Is.EquivalentTo(new[] { 0, 1, 2 }));
-            Assert.That(GetRange(0, -2), Is.EquivalentTo(new[] { 0, -1, -2 }));
-            Assert.That(GetRange(-2, 2), Is.EquivalentTo(new[] { -2, -1, 0, 1, 2 }));
-            Assert.That(GetRange(-1, -2), Is.EquivalentTo(new[] { -1, -2 }));
-            Assert.That(GetRange(2, 4), Is.EquivalentTo(new[] { 2, 3, 4 }));
-            Assert.That(GetRange(-2, -4), Is.EquivalentTo(new[] { -2, -3, -4 }));
-        }
-
-        [Test]
-        public void Distance() {
-            // Act
-
-            // Assert
-            Assert.That(GetDistance(0, 2), Is.EqualTo(2));
-            Assert.That(GetDistance(1, 2), Is.EqualTo(1));
-            Assert.That(GetDistance(-2, 2), Is.EqualTo(4));
-        }
-
-        public IEnumerable<int> GetRange(int start, int end) {
-            if (end < start) {
-                return Enumerable.Range(end, GetDistance(start, end) + 1);
-            }
-
-            return Enumerable.Range(start, GetDistance(start, end) + 1);
-        }
-
-        public int GetDistance(int x, int y) {
-            return Math.Abs(y - x);
-        }
     }
 }
