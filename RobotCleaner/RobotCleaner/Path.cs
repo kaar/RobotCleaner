@@ -24,5 +24,9 @@ namespace RobotCleaner {
             list.Add(end);
             return list;
         }
+
+        public IEnumerable<int> GetPointRange(int start, int end) {
+            return Enumerable.Range(start, start - end);
+        }
     }
 }

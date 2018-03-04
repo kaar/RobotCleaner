@@ -69,5 +69,22 @@ namespace RobotCleaner.Tests {
             // Assert
             Assert.That(points, Is.EquivalentTo(new List<Point> { new Point(0, 0), new Point(0, 1), new Point(0, 2) }));
         }
+
+        [Test]
+        public void Range() {
+            // Act
+            IEnumerable<int> positiveNumbers = GetRange(0, 2);
+            IEnumerable<int> negativeNumbers = Enumerable.Range(-3, 3)
+                                                         .Reverse()
+                                                         .ToList();
+
+            // Assert
+            Assert.That(positiveNumbers, Is.EquivalentTo(new[] { 0, 1, 2 }));
+            Assert.That(negativeNumbers, Is.EquivalentTo(new[] { -1, -2, -3 }));
+        }
+
+        public IEnumerable<int> GetRange(int start, int end) {
+            return Enumerable.Range(start, end - start + 1);
+        }
     }
 }
