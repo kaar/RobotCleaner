@@ -63,6 +63,20 @@ namespace RobotCleaner.Tests {
         }
 
         [Test]
+        public void GetPoints_NoMoving_OnePoint() {
+            // Arrange
+            Point start = new Point(0, 0);
+            Point end = new Point(0, 0);
+
+            // Act
+            List<Point> points = Path.GetPoints(start, end)
+                                     .ToList();
+
+            // Assert
+            Assert.That(points, Is.EquivalentTo(new List<Point> { new Point(0, 0) }));
+        }
+
+        [Test]
         public void Range() {
             // Act
 

@@ -15,7 +15,9 @@ namespace RobotCleaner {
                     .Select(i => new Point(start.X, i));
             }
 
-            return null;
+            return new List<Point> {
+                start
+            };
         }
 
         public static bool MovingVertically(int startY, int endY) {
