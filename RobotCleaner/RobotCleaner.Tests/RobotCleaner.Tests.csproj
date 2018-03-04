@@ -46,6 +46,7 @@
     <Compile Include="Commands\CommandBuilderTests.cs" />
     <Compile Include="Commands\EastTests.cs" />
     <Compile Include="Commands\NorthTests.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="RobotCleanerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotTests.cs" />

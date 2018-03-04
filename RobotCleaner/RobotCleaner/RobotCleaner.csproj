@@ -42,6 +42,7 @@
     <Compile Include="Commands\North.cs" />
     <Compile Include="Commands\South.cs" />
     <Compile Include="Commands\West.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

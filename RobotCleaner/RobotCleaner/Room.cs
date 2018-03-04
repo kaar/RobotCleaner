@@ -8,6 +8,9 @@ namespace RobotCleaner {
             cleaned.UnionWith(points);
         }
 
+        //public Point AddPath(Point startPoint, Point endPoint) {
+        //}
+
         public int CleanedSquares() {
             return cleaned.Count;
         }
