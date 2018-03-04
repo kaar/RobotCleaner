@@ -8,7 +8,7 @@ namespace RobotCleaner {
             string startPos = Console.ReadLine();
             var start = new Point(0, 0);
             var room = new Room();
-            var robot = new Robot(room, start);
+            var robot = new Robot(room);
             for (var i = 0; i < numberOfCommands; i++) {
                 string[] commandLine = Console.ReadLine()
                                          ?.Split(' ');

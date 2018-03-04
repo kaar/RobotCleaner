@@ -5,14 +5,10 @@ namespace RobotCleaner {
         private readonly Room room;
         private Point currentPos;
 
-        public Robot(Room room, Point start) {
+        public Robot(Room room) {
             this.room = room;
-            currentPos = start;
+            currentPos = new Point(0, 0);
             InitClean();
-        }
-
-        private void InitClean() {
-            this.room.AddPath(currentPos, currentPos);
         }
 
         public void ExecuteCommand(ICommand command) {
@@ -23,6 +19,10 @@ namespace RobotCleaner {
 
         public Point CurrentPos() {
             return currentPos;
+        }
+
+        private void InitClean() {
+            room.AddPath(currentPos, currentPos);
         }
     }
 }
