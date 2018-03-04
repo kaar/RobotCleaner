@@ -36,7 +36,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
+    <Compile Include="Commands\CommandBuilder.cs" />
+    <Compile Include="Commands\East.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\North.cs" />
+    <Compile Include="Commands\South.cs" />
+    <Compile Include="Commands\West.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

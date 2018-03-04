@@ -1,7 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
+using RobotCleaner.Commands;
 
-namespace RobotCleaner.Tests {
+namespace RobotCleaner.Tests.Commands {
     [TestFixture]
     public class CommandBuilderTests {
         private CommandBuilder commandBuilder;

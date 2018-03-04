@@ -1,5 +1,6 @@
 ﻿using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
+using RobotCleaner.Commands;
 
 namespace RobotCleaner {
     public class Robot {
