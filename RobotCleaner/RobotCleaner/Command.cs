@@ -1,22 +1,5 @@
 ﻿
 namespace RobotCleaner {
-    public class Command {
-        private readonly string direction;
-        private readonly int steps;
-
-        public Command(string direction, int steps) {
-            this.direction = direction;
-            this.steps = steps;
-        }
-
-        public Point Execute(Point start) {
-            if (direction == "E") {
-                return new Point(start.X + steps, start.Y);
-            }
-            return null;
-        }
-    }
-
     public interface ICommand {
         Point Execute(Point start);
     }

@@ -9,7 +9,7 @@ namespace RobotCleaner {
             currentPos = start;
         }
 
-        public void ExecuteCommand(Command command) {
+        public void ExecuteCommand(ICommand command) {
         }
     }
 
@@ -17,7 +17,7 @@ namespace RobotCleaner {
         public static void Main(string[] args) {
             int numberOfCommands = int.Parse(args[0]);
 
-            var commands = new Command[numberOfCommands];
+            //var commands = new Command[numberOfCommands];
 
             // Robot robot = new Robot(x,y);
             Room room = new Room();

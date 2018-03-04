@@ -12,7 +12,7 @@ namespace RobotCleaner.Tests {
             int y = 0;
             Room room = new Room();
             Robot r = new Robot(room, new Point(x, y));
-            r.ExecuteCommand(new Command("E", 2));
+            //r.ExecuteCommand(new Command("E", 2));
             //Assert.That(room.CleanedSquares, Is.EquivalentTo(2));
         }
     }
