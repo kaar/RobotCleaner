@@ -5,8 +5,7 @@ namespace RobotCleaner {
     public class Program {
         public static void Main(string[] args) {
             int numberOfCommands = int.Parse(Console.ReadLine());
-            string startPos = Console.ReadLine();
-            var start = new Point(0, 0);
+            Console.ReadLine();
             var room = new Room();
             var robot = new Robot(room);
             for (var i = 0; i < numberOfCommands; i++) {
@@ -14,8 +13,7 @@ namespace RobotCleaner {
                                          ?.Split(' ');
                 string direction = commandLine[0];
                 int steps = int.Parse(commandLine[1]);
-                Command command = CommandFactory.Create(direction, steps);
-                robot.ExecuteCommand(command);
+                robot.ExecuteCommand(CommandFactory.Create(direction, steps));
             }
 
             Console.WriteLine($"=> Cleaned: {room.CleanedSquares()}");

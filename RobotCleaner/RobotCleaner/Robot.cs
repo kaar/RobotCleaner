@@ -17,6 +17,9 @@ namespace RobotCleaner {
             currentPos = endpoint;
         }
 
+        /// <summary>
+        /// Clean the initial position of the robot.
+        /// </summary>
         private void InitClean() {
             room.AddPath(currentPos, currentPos);
         }

@@ -4,27 +4,34 @@ using System.Linq;
 
 namespace RobotCleaner {
     public class Path {
+        /// <summary>
+        /// Calculates all visited points along the path from start to end.
+        /// </summary>
+        /// <param name="start">Starting point</param>
+        /// <param name="end">Ending point</param>
+        /// <returns>All points between and included start and end.</returns>
         public static IEnumerable<Point> GetPoints(Point start, Point end) {
-            if (MovingHorizontally(start.X, end.X)) {
+            if (MovedHorizontally(start.X, end.X)) {
                 return GetRange(start.X, end.X)
                     .Select(i => new Point(i, start.Y));
             }
 
-            if (MovingVertically(start.Y, end.Y)) {
+            if (MovedVertically(start.Y, end.Y)) {
                 return GetRange(start.Y, end.Y)
                     .Select(i => new Point(start.X, i));
             }
 
+            // In case you did not move.
             return new List<Point> {
                 start
             };
         }
 
-        public static bool MovingVertically(int startY, int endY) {
+        private static bool MovedVertically(int startY, int endY) {
             return GetDistance(startY, endY) > 0;
         }
 
-        private static bool MovingHorizontally(int startX, int endX) {
+        private static bool MovedHorizontally(int startX, int endX) {
             return GetDistance(startX, endX) > 0;
         }
 
