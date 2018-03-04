@@ -10,7 +10,7 @@ namespace RobotCleaner.Tests.Commands {
             // Arrange
 
             // Act
-            ICommand actual = CommandFactory.Create("E", 10);
+            Command actual = CommandFactory.Create("E", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(East)));
@@ -21,7 +21,7 @@ namespace RobotCleaner.Tests.Commands {
             // Arrange
 
             // Act
-            ICommand actual = CommandFactory.Create("W", 10);
+            Command actual = CommandFactory.Create("W", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(West)));
@@ -32,7 +32,7 @@ namespace RobotCleaner.Tests.Commands {
             // Arrange
 
             // Act
-            ICommand actual = CommandFactory.Create("S", 10);
+            Command actual = CommandFactory.Create("S", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(South)));
@@ -43,7 +43,7 @@ namespace RobotCleaner.Tests.Commands {
             // Arrange
 
             // Act
-            ICommand actual = CommandFactory.Create("N", 10);
+            Command actual = CommandFactory.Create("N", 10);
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(North)));

@@ -1,12 +1,10 @@
 namespace RobotCleaner.Commands {
-    public class North : ICommand {
-        public North(int steps) {
-            Steps = steps;
+    public class North : Command {
+        public North(int steps)
+            : base(steps) {
         }
 
-        public int Steps { get; }
-
-        public Point Execute(Point start) {
+        public override Point Execute(Point start) {
             return new Point(start.X, start.Y + Steps);
         }
     }

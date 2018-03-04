@@ -11,7 +11,7 @@ namespace RobotCleaner {
             InitClean();
         }
 
-        public void ExecuteCommand(ICommand command) {
+        public void ExecuteCommand(Command command) {
             Point endpoint = command.Execute(currentPos);
             room.AddPath(currentPos, endpoint);
             currentPos = endpoint;

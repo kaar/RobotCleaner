@@ -2,7 +2,7 @@ using System;
 
 namespace RobotCleaner.Commands {
     public class CommandFactory {
-        public static ICommand Create(string direction, int steps) {
+        public static Command Create(string direction, int steps) {
             switch (direction) {
                 case "E":
                     return new East(steps);

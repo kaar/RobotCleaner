@@ -14,7 +14,7 @@ namespace RobotCleaner {
                                          ?.Split(' ');
                 string direction = commandLine[0];
                 int steps = int.Parse(commandLine[1]);
-                ICommand command = CommandFactory.Create(direction, steps);
+                Command command = CommandFactory.Create(direction, steps);
                 robot.ExecuteCommand(command);
             }
 
