@@ -13,20 +13,18 @@ namespace RobotCleaner.Tests {
         }
 
         [Test]
-        public void Robot_Started_OneVertexCleaned() {
+        public void Robot_OnStart_InitialVertexCleaned() {
             // Act
+            int actual = room.CleanedSquares();
 
             // Assert
-            Assert.That(room.CleanedSquares(), Is.EqualTo(1));
+            Assert.That(actual, Is.EqualTo(1));
         }
 
         [Test]
-        public void Clean() {
-            // Arrange
-
+        public void ExecuteCommand_TwoStepsEast_CleanThreeSquares() {
             // Act
-            ICommand command = new East(2);
-            robot.ExecuteCommand(command);
+            robot.ExecuteCommand(new East(2));
 
             // Assert
             Assert.That(room.CleanedSquares(), Is.EqualTo(3));
@@ -34,11 +32,8 @@ namespace RobotCleaner.Tests {
 
         [Test]
         public void Clean_Two() {
-            // Arrange
-
             // Act
-            ICommand command = new East(2);
-            robot.ExecuteCommand(command);
+            robot.ExecuteCommand(new East(2));
             robot.ExecuteCommand(new South(1));
 
             // Assert
@@ -50,8 +45,7 @@ namespace RobotCleaner.Tests {
             // Arrange
 
             // Act
-            ICommand command = new East(2);
-            robot.ExecuteCommand(command);
+            robot.ExecuteCommand(new East(2));
             robot.ExecuteCommand(new South(1));
             robot.ExecuteCommand(new West(1));
 
