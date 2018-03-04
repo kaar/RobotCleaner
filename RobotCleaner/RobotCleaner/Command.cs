@@ -1,4 +1,6 @@
-﻿namespace RobotCleaner {
+﻿using System;
+
+namespace RobotCleaner {
     public interface ICommand {
         int Steps { get; }
 
@@ -7,23 +9,18 @@
 
     public class CommandBuilder {
         public ICommand Create(string direction, int steps) {
-            if (direction == "E") {
-                return new East(steps);
+            switch (direction) {
+                case "E":
+                    return new East(steps);
+                case "W":
+                    return new West(steps);
+                case "N":
+                    return new North(steps);
+                case "S":
+                    return new South(steps);
+                default:
+                    throw new Exception($"Unknown direction {direction}");
             }
-
-            if (direction == "W") {
-                return new West(steps);
-            }
-
-            if (direction == "N") {
-                return new North(steps);
-            }
-
-            if (direction == "S") {
-                return new South(steps);
-            }
-
-            return null;
         }
     }
 

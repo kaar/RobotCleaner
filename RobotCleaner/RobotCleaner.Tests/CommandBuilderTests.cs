@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace RobotCleaner.Tests {
     [TestFixture]
@@ -52,6 +53,12 @@ namespace RobotCleaner.Tests {
 
             // Assert
             Assert.That(actual, Is.TypeOf(typeof(North)));
+        }
+
+        [Test]
+        public void Create_UnknownDirection_ThrowsException() {
+            // Act & Assert
+            Assert.Throws<Exception>(() => commandBuilder.Create("X", 10));
         }
     }
 }
