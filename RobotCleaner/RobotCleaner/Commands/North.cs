@@ -7,7 +7,7 @@ namespace RobotCleaner.Commands {
         public int Steps { get; }
 
         public Point Execute(Point start) {
-            return new Point(start.X, start.Y + 2);
+            return new Point(start.X, start.Y + Steps);
         }
     }
 }
