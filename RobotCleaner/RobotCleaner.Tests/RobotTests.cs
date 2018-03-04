@@ -92,7 +92,7 @@ namespace RobotCleaner.Tests {
             var startX = 10;
             var startY = 22;
             var room = new Room();
-            Robot r = new Robot(new Room(), new Point(startX, startY));
+            Robot r = new Robot(room, new Point(startX, startY));
             r.ExecuteCommand(new East(2));
             Assert.That(r.CurrentPos(), Is.EqualTo(new Point(12, 22)));
             r.ExecuteCommand(new North(1));
