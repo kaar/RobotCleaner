@@ -85,18 +85,6 @@ namespace RobotCleaner.Tests {
             Assert.That(GetDistance(-2, 2), Is.EqualTo(4));
         }
 
-        [Test]
-        public void Merge() {
-            IEnumerable<int> x = new[] { 1, 2, 3 };
-            IEnumerable<int> y = new[] { 0 };
-
-            // Act
-            var actual = new List<Point>();
-
-            // Assert
-            Assert.That(actual, Is.EquivalentTo(new[] { new Point(1, 0), new Point(2, 0), new Point(3, 0) }));
-        }
-
         public IEnumerable<int> GetRange(int start, int end) {
             if (end < start) {
                 return Enumerable.Range(end, GetDistance(start, end) + 1);
