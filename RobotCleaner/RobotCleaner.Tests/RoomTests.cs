@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace RobotCleaner.Tests {
     public class RoomTests {
@@ -11,7 +10,7 @@ namespace RobotCleaner.Tests {
         }
 
         [Test]
-        public void AddPath_AddInitThenMoveFourSqueres_ReturnFour() {
+        public void AddPath_AddInitThenMoveFourSquares_ReturnFour() {
             // Act
             room.AddPath(new Point(0, 0), new Point(0, 0));
             room.AddPath(new Point(0, 0), new Point(2, 0));
